@@ -6,7 +6,7 @@ const searchForm = document.querySelector("[data-searchForm]");
 const loadingScreen = document.querySelector(".loading-container");
 const userInfoContainer = document.querySelector(".user-info-container");
 
-const API_KEY = "ce618028f09c8323055746481a0694be";
+const API_KEY = "3da1078c92aaf08c57e2d86ecff693a6";
 
 let currentTab = userTab;
 
@@ -70,7 +70,7 @@ async function fetchUserWeatherInfo(coordinates) {
 
     //  API CALLING
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
         const data =await response.json();  
         loadingScreen.classList.remove("active");
         userInfoContainer.classList.add("active");
@@ -80,8 +80,6 @@ async function fetchUserWeatherInfo(coordinates) {
     catch (err) {
         loadingScreen.classList.remove("active");
         // some code are remaining
-
-
     }
 }
 
