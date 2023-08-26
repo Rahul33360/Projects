@@ -6,7 +6,12 @@ const searchForm = document.querySelector("[data-searchForm]");
 const loadingScreen = document.querySelector(".loading-container");
 const userInfoContainer = document.querySelector(".user-info-container");
 
-const API_KEY = "3da1078c92aaf08c57e2d86ecff693a6";
+
+// console.log('Before dotenv');
+require('dotenv').config();
+// console.log('After dotenv');
+
+const API_KEY=process.env.api_key;
 
 let currentTab = userTab;
 
